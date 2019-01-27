@@ -103,6 +103,15 @@ on property:sys.boot_completed=1 && property:ro.config.zram=true
     write /proc/sys/vm/vfs_cache_pressure 50
     write /sys/block/zram0/comp_algorithm lz4
 
+# Enable KSM if ZRAM is disabled 
+on property:sys.boot_completed=1 && property:ro.config.zram=false
+    write /proc/sys/vm/swappiness 10
+    write /proc/sys/vm/page-cluster 0
+    write /sys/kernel/mm/ksm/deferred_timer 1
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
+
 # Start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
