@@ -1,11 +1,10 @@
 # Audio
 audio.deep_buffer.media=true
-persist.vendor.audio.dualmic.config=endfire
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.fluence.speaker=true
 # can be "fluence" or "fluencepro" or "none"
-ro.vendor.audio.sdk.fluencetype=fluence
+ro.vendor.audio.sdk.fluencetype=none
 ro.vendor.audio.sdk.ssr=false
 vendor.audio_hal.period_size=240
 vendor.voice.path.for.pcm.voip=true
@@ -57,7 +56,6 @@ ro.opengles.version=196610
 ro.qualcomm.cabl=0
 ro.qcom.ad=1
 ro.qcom.ad.calib.data=/system/etc/calib_kiw.cfg
-sys.hwc.gpu_perf_mode=1
 
 # DRM
 drm.service.enabled=1
@@ -79,12 +77,11 @@ media.stagefright.enable-scan=true
 mm.enable.sec.smoothstreaming=true
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
-ro.config.media_vol_steps=20
-ro.config.vc_call_vol_steps=10 
 
 # Net
 persist.data.netmgrd.qos.enable=true
 persist.timed.enable=true
+net.tcp.2g_init_rwnd=10
 
 # Other
 dev.pm.dyn_samplingrate=1
@@ -101,7 +98,6 @@ persist.data.qmi.adb_logmask=0
 persist.omh.enabled=0
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.force_nw_search=1
-persist.radio.force_on_dc=true
 persist.radio.msgtunnel.start=false
 persist.radio.no_wait_for_card=1
 persist.radio.rat_on=combine
@@ -113,10 +109,8 @@ rild.libargs=-d /dev/smd0
 vendor.rild.libpath=/system/vendor/lib64/libril-wrapper.so
 vendor.rild.libargs=-d /dev/smd0
 ro.config.AC_optimize_plmn_srch=true
-ro.config.dsds_mode=umts_gsm
 ro.config.eons_always_ap=false
 ro.config.force_reject_cause=true
-ro.config.hw_dsda=false
 ro.config.hw_fast_dormancy=true
 ro.config.hw_fdtimer_screenOff=3000
 ro.config.hw_fdtimer_screenOn=-1
@@ -131,13 +125,10 @@ ro.config.optimize_signal=true
 ro.hwpp.cust_ons_bin=true
 ro.hwpp_dorecoverylevel=1
 ro.hwpp_ds_fail=111,-3
-ro.hwpp.disable_IA=true
 ro.hwpp_sig_stability_switch=true
-ro.multi.rild=true
-ro.ril.hsxpa=1
-ro.ril.gprsclass=10
 ro.telephony.call_ring.multiple=false
 ro.use_data_netmgrd=true
+ro.vendor.use_data_netmgrd=true
 persist.radio.add_power_save=1
 persist.radio.modem.cap=7E442
 
@@ -150,3 +141,7 @@ persist.sys.usb.config.extra=none
 
 # WiFi
 wifi.interface=wlan0
+
+# Custom values
+#ro.config.media_vol_steps=20
+#ro.config.vc_call_vol_steps=10 
